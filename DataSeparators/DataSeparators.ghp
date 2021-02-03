@@ -6,15 +6,16 @@
     rulesCacheUri="%%PROJECT/ROOT%%Rules" uuid="00000174-df2b-67c9-0000-a472756601c0">
     <rootEnvironmentConfig isOverridingSecretsNamespace="false" overridingSecretsNamespace="">
         <environmentVariable evdescription="" key="echo_message" value=""/>
+        <environmentVariable evdescription="" key="petname" value=""/>
     </rootEnvironmentConfig>
     <dateTimeConfig date="yyyy/MM/dd" dateTime="dd-MMM-yyyy HH:mm:ss" time="HH:mm:ss.SSS"/>
     <serverSettings
         ghRepositoryURL="https://ghclient01.nonprod.hclpnp.com:5443/RTCP"
-        trustSource="TRUST_ALL" trustStorePassword="#com.ghc.1!cf23" trustStorePath="">
+        trustSource="TRUST_ALL" trustStorePassword="#com.ghc.1!adeb" trustStorePath="">
         <dbConnectionParameters maxConnections="1" poolName="DefaultPoolName">
             <connectionParams ZOSEnv="false"
                 dpsHost="http://&lt;hostname>:&lt;port>/api/v1/profile"
-                dpsPass="#com.ghc.1!2b8b"
+                dpsPass="#com.ghc.1!6f75"
                 driverClass="com.ibm.db2.jcc.DB2Driver"
                 password="#com.ghc.1!398a4ADF4435E317A2FE7220116155340CB9"
                 url="jdbc:db2://ghrhel6.nonprod.hclpnp.com:50000/ritdbf"
@@ -38,7 +39,7 @@
         <automationServer enabled="false" hostname="" port="443"
             projectId="-1" projectName="--No Project Selected--"
             publishResults="false" trustSource="TRUST_ALL"
-            trustStorePassword="#com.ghc.1!9f61" trustStorePath=""/>
+            trustStorePassword="#com.ghc.1!83d1" trustStorePath=""/>
     </serverSettings>
     <permissionsSettings autoLogin="true" host="US-PNP-DC05"
         permFactId="ldap.permissions.factory.none" port="389" pswd="DYb8QOVQQMPlESdca19NeWbgvUXp/ZuGDf3VDXzQlB8=$D4w9LITEfge0e2qANlyKXV5vA2VqjDHTDOXllWBtJpo="/>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editableResource createdTimestamp="1587561500726"
-    createdUser="KATHERINE.CARROLL" id="-2e83cdc4:171a20a0ea9:-7f69"
-    type="environment_resource" updatedTimestamp="1612385389256"
+<editableResource createdTimestamp="1612385075292"
+    createdUser="KATHERINE.CARROLL" id="-710ee593:17768deca55:-7e3c"
+    type="environment_resource" updatedTimestamp="1612385075292"
     updatedUser="KATHERINE.CARROLL" version="1.0">
     <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
     <resourceConfig isOverridingSecretsNamespace="false" overridingSecretsNamespace="">
-        <environmentVariable evdescription="" key="echo_message" value="harper"/>
+        <environmentVariable evdescription="" key="echo_message" value="chico"/>
         <environmentVariable evdescription="" key="petname" value="secret://petname"/>
     </resourceConfig>
 </editableResource>
