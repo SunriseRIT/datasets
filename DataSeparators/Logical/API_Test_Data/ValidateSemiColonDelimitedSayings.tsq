@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1606250770684"
+    createdUser="KATHERINE.CARROLL" id="4164ca79:175fbdf7b3a:-782f"
+    type="test_resource" updatedTimestamp="1606250918650"
+    updatedUser="KATHERINE.CARROLL" version="1.1">
+    <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+    <resourceConfig description="" name="">
+        <testTree>
+            <editableResource id="4164ca79:175fbdf7b3a:-7e11"
+                selfDescribing="Use a value from the current run to extract information from a test data set."
+                type="test_data_lookup_action" version="1.0">
+                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <resourceConfig description="" name="Search &quot;SemiColonSayings&quot; for &quot;home&quot; in &quot;key&quot;">
+                    <true id="4164ca79:175fbdf7b3a:-7e10"
+                        selfDescribing="Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="0">
+                            <editableResource
+                                id="5e98740a:174df50ec2f:-7e6a"
+                                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                                type="logging_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig append="true"
+                                    description="" flush="true"
+                                    loggingMessage="Expecting %%home%% >>> %%message%%"
+                                    name="Expecting %%home%% >>> %%message%%"
+                                    outputFile="" role="0"/>
+                            </editableResource>
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7dab"
+                                selfDescribing="Choose evaluation expressions to determine test execution flow. Use predefined functions, custom plug-ins and tagged data. If the functions pass then the test will continue to execute; otherwise the test will fail."
+                                type="assert_true_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig description=""
+                                    name="eq(tags[&quot;home&quot;],tags[&quot;message&quot;])"
+                                    option="OTHER"
+                                    script="eq(tags[&quot;home&quot;],tags[&quot;message&quot;])" type="script:ECMAScript"/>
+                            </editableResource>
+                        </resourceConfig>
+                    </true>
+                    <false id="4164ca79:175fbdf7b3a:-7e0f"
+                        selfDescribing="Not Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="1">
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7d87"
+                                selfDescribing="This action will cause the test to fail. You can use the settings below to log messages to a file and the console."
+                                type="fail_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig append="true"
+                                    description="" flush="true"
+                                    loggingMessage="key home wasn't found in the data table"
+                                    name="key home wasn't found in the data table" outputFile=""/>
+                            </editableResource>
+                        </resourceConfig>
+                    </false>
+                    <props allMatches="false">
+                        <tdsref id="5e98740a:174df50ec2f:-7ddd"
+                            lkname="SemiColonSayings"
+                            lkpath="API_Test_Data/SemiColonSayings" type="simple_test_data"/>
+                        <lookups column="key" lookupValue="home"/>
+                    </props>
+                    <mapper disableFiltersWhenEmpty="false"
+                        knownColumns="message,key" noAutoMap="message">
+                        <mapping columnName="message" tagName="message" type="4"/>
+                    </mapper>
+                </resourceConfig>
+            </editableResource>
+            <editableResource id="4164ca79:175fbdf7b3a:-7cbe"
+                selfDescribing="Use a value from the current run to extract information from a test data set."
+                type="test_data_lookup_action" version="1.0">
+                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <resourceConfig description="" name="Search &quot;SemiColonSayings&quot; for &quot;dirt&quot; in &quot;key&quot;">
+                    <true id="4164ca79:175fbdf7b3a:-7cbd"
+                        selfDescribing="Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="0">
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7cbb"
+                                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                                type="logging_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig append="true"
+                                    description="" flush="true"
+                                    loggingMessage="Expecting %%dirt%% >>> %%message%%"
+                                    name="Expecting %%dirt%% >>> %%message%%"
+                                    outputFile="" role="0"/>
+                            </editableResource>
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7cbc"
+                                selfDescribing="Choose evaluation expressions to determine test execution flow. Use predefined functions, custom plug-ins and tagged data. If the functions pass then the test will continue to execute; otherwise the test will fail."
+                                type="assert_true_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig description=""
+                                    name="eq(tags[&quot;dirt&quot;],tags[&quot;message&quot;])"
+                                    option="OTHER"
+                                    script="eq(tags[&quot;dirt&quot;],tags[&quot;message&quot;])" type="script:ECMAScript"/>
+                            </editableResource>
+                        </resourceConfig>
+                    </true>
+                    <false id="4164ca79:175fbdf7b3a:-7cba"
+                        selfDescribing="Not Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="1">
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7cb9"
+                                selfDescribing="This action will cause the test to fail. You can use the settings below to log messages to a file and the console."
+                                type="fail_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig append="true"
+                                    description="" flush="true"
+                                    loggingMessage="key dirt wasn't found in the data table"
+                                    name="key dirt wasn't found in the data table" outputFile=""/>
+                            </editableResource>
+                        </resourceConfig>
+                    </false>
+                    <props allMatches="false">
+                        <tdsref id="5e98740a:174df50ec2f:-7ddd"
+                            lkname="SemiColonSayings"
+                            lkpath="API_Test_Data/SemiColonSayings" type="simple_test_data"/>
+                        <lookups column="key" lookupValue="dirt"/>
+                    </props>
+                    <mapper disableFiltersWhenEmpty="false"
+                        knownColumns="message,key" noAutoMap="message">
+                        <mapping columnName="message" tagName="message" type="4"/>
+                    </mapper>
+                </resourceConfig>
+            </editableResource>
+            <editableResource id="4164ca79:175fbdf7b3a:-7b8a"
+                selfDescribing="Use a value from the current run to extract information from a test data set."
+                type="test_data_lookup_action" version="1.0">
+                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <resourceConfig description="" name="Search &quot;SemiColonSayings&quot; for &quot;kind&quot; in &quot;key&quot;">
+                    <true id="4164ca79:175fbdf7b3a:-7b89"
+                        selfDescribing="Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="0">
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7b88"
+                                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                                type="logging_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig append="true"
+                                    description="" flush="true"
+                                    loggingMessage="Expecting %%kind%% >>> %%message%%"
+                                    name="Expecting %%kind%% >>> %%message%%"
+                                    outputFile="" role="0"/>
+                            </editableResource>
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7b87"
+                                selfDescribing="Choose evaluation expressions to determine test execution flow. Use predefined functions, custom plug-ins and tagged data. If the functions pass then the test will continue to execute; otherwise the test will fail."
+                                type="assert_true_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig description=""
+                                    name="eq(tags[&quot;kind&quot;],tags[&quot;message&quot;])"
+                                    option="OTHER"
+                                    script="eq(tags[&quot;kind&quot;],tags[&quot;message&quot;])" type="script:ECMAScript"/>
+                            </editableResource>
+                        </resourceConfig>
+                    </true>
+                    <false id="4164ca79:175fbdf7b3a:-7b86"
+                        selfDescribing="Not Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="1">
+                            <editableResource
+                                id="4164ca79:175fbdf7b3a:-7b85"
+                                selfDescribing="This action will cause the test to fail. You can use the settings below to log messages to a file and the console."
+                                type="fail_action" version="1.0">
+                                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                                <resourceConfig append="true"
+                                    description="" flush="true"
+                                    loggingMessage="key dirt wasn't found in the data table"
+                                    name="key dirt wasn't found in the data table" outputFile=""/>
+                            </editableResource>
+                        </resourceConfig>
+                    </false>
+                    <props allMatches="false">
+                        <tdsref id="5e98740a:174df50ec2f:-7ddd"
+                            lkname="SemiColonSayings"
+                            lkpath="API_Test_Data/SemiColonSayings" type="simple_test_data"/>
+                        <lookups column="key" lookupValue="kind"/>
+                    </props>
+                    <mapper disableFiltersWhenEmpty="false"
+                        knownColumns="message,key" noAutoMap="message">
+                        <mapping columnName="message" tagName="message" type="4"/>
+                    </mapper>
+                </resourceConfig>
+            </editableResource>
+        </testTree>
+        <tagDataStore inputMode="NONE" outputMode="NONE">
+            <tag
+                defaultValue="Kindness is like snow, it beautifies everything it covers."
+                description="" name="kind"/>
+            <tag defaultValue="He who throws dirt always loses ground."
+                description="" name="dirt"/>
+            <tag defaultValue="" description="" name="message"/>
+            <tag defaultValue="There's no place like home."
+                description="" name="home"/>
+        </tagDataStore>
+        <testprops messageClearance="false"/>
+    </resourceConfig>
+</editableResource>

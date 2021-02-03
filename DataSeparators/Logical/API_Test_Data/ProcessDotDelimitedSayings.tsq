@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1601475422195"
+    createdUser="KATHERINE.CARROLL" id="5e98740a:174df50ec2f:-7d36"
+    type="test_resource" updatedTimestamp="1601475476066"
+    updatedUser="KATHERINE.CARROLL" version="1.1">
+    <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+    <resourceConfig description="" name="">
+        <testTree>
+            <editableResource id="5e98740a:174df50ec2f:-7e26"
+                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                type="logging_action" version="1.0">
+                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <resourceConfig append="true" description=""
+                    flush="true" loggingMessage="------> %%TEST/NAME%%"
+                    name="------> %%TEST/NAME%%" outputFile="" role="0"/>
+            </editableResource>
+            <editableResource id="-7888ec70:171ac021bcd:-7d0f"
+                selfDescribing="Iterate over a test data set"
+                type="iterate_action" version="1.0">
+                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <resourceConfig description="" disableMappings="false"
+                    iterationContributor="true" maxIterationTime="0.0"
+                    maxIterationTimeExceededFailsTest="false"
+                    maxTotalIterationTime="0.0"
+                    maxTotalIterationTimeExceededFailsTest="false"
+                    name=" over DotSayings" option="NOTHING"
+                    pacingtime="0.0" pacingtype="MIN_DURATION"
+                    performanceDisableValidation="false"
+                    performanceInstances="1"
+                    performanceInterleave="false"
+                    performanceMaximumIterationTime="0"
+                    performanceMaximumTestTime="0"
+                    performanceUseMaximumIterationTime="false"
+                    performanceUseMaximumTestTime="false" remoteAgent=""
+                    reportingLogIterations="1"
+                    reportingLogLogMessages="8" reportingLogMessages="4"
+                    reportingLogScriptExitCodes="8"
+                    reportingLogScriptOutput="8"
+                    reportingLogTagValues="8" reportingLogTimes="8"
+                    runSettingsContinueOnFail="true"
+                    runSettingsDelayEnabled="false"
+                    runSettingsDelayType="Fixed Delay"
+                    runSettingsIterations=""
+                    runSettingsMaximumDelayValue="0"
+                    runSettingsMinimumDelayValue="0"
+                    runSettingsRunFor="0" runSettingsRunType="Once Only"
+                    runSettingsTestDescription=""
+                    type="script:ECMAScript" useMaxIterationTime="false"
+                    useMaxTotalIterationTime="false" usepacing="false">
+                    <testDataSetReference
+                        id="5e98740a:174df50ec2f:-7d4f"
+                        lkname="DotSayings"
+                        lkpath="API_Test_Data/DotSayings" type="simple_test_data"/>
+                    <mapper disableFiltersWhenEmpty="false"
+                        knownColumns="message,key" noAutoMap="message">
+                        <mapping columnName="message" tagName="message" type="4"/>
+                        <filter columnIdx="1" columnName="message">
+                            <fieldAction type="1">
+                                <fieldAction type="0"/>
+                            </fieldAction>
+                        </filter>
+                    </mapper>
+                    <testTree>
+                        <editableResource
+                            id="-7888ec70:171ac021bcd:-7c8b"
+                            selfDescribing="Choose evaluation expressions to determine test execution flow. Use predefined functions, custom plug-ins and tagged data. If the functions pass then the test will continue to execute; otherwise the test will fail."
+                            type="assert_true_action" version="1.0">
+                            <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                            <resourceConfig description=""
+                                name="eq(tags[&quot;message&quot;],tags[&quot;message&quot;])"
+                                option="OTHER"
+                                script="eq(tags[&quot;message&quot;],tags[&quot;message&quot;])" type="script:ECMAScript"/>
+                        </editableResource>
+                        <editableResource
+                            id="5e98740a:174df50ec2f:-7e6a"
+                            selfDescribing="The log actions enables you to output messages to console and a logging file."
+                            type="logging_action" version="1.0">
+                            <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                            <resourceConfig append="true" description=""
+                                flush="true"
+                                loggingMessage="-----------------> %%message%%"
+                                name="-----------------> %%message%%"
+                                outputFile="" role="0"/>
+                        </editableResource>
+                    </testTree>
+                </resourceConfig>
+            </editableResource>
+            <editableResource id="-2bb4465b:171ad92f2fe:-7c61"
+                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                type="logging_action" version="1.0">
+                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <resourceConfig append="true" description=""
+                    flush="true"
+                    loggingMessage="------> Sayings are over"
+                    name="------> Sayings are over" outputFile="" role="0"/>
+            </editableResource>
+        </testTree>
+        <tagDataStore inputMode="NONE" outputMode="NONE">
+            <tag defaultValue="" description="" name="message"/>
+        </tagDataStore>
+        <testprops messageClearance="false"/>
+    </resourceConfig>
+</editableResource>
