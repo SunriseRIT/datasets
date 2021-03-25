@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1616687216661"
+    createdUser="KATHERINE.CARROLL" id="6a333832:1786a0e70ea:-7e62"
+    type="simple_test_data" updatedTimestamp="1616687361285"
+    updatedUser="KATHERINE.CARROLL" version="1.0">
+    <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+    <resourceConfig autoMapColumns="true" columnCount=""
+        datasourceType="Delimited" escapeQuotedString="true"
+        hasColumnNamesLine="true" linesBeforeColumnNames="0"
+        linesToSkip="0"
+        location="%%PROJECT/ROOT_DIRECTORY%%/RIT_Numbers_RAW.csv"
+        loop="false" paddingChar="" parsingType="OffsetLength"
+        separator="," treatEmptyStringAsNull="false"
+        treatTextAsEmpty="false" treatTextAsEmptyValue=""
+        treatTextAsNull="false" treatTextAsNullValue="" trim="false"/>
+</editableResource>
