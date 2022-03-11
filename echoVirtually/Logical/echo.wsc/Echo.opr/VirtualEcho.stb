@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1587561814317"
+    createdUser="KATHERINE.CARROLL" id="-2e83cdc4:171a20a0ea9:-7d01"
+    type="stub_resource" updatedTimestamp="1646926847263"
+    updatedUser="Katherine.Carroll" version="1.1">
+    <loggingConfiguration debug="true" resultWriterLoggingLevel="FULL" writeStubEventsToDB="true"/>
+    <resourceConfig description="" name="">
+        <testTree>
+            <editableResource id="-2e83cdc4:171a20a0ea9:-7cff"
+                selfDescribing="Configure a subscriber to pick up a message that can be passed to the child Case Actions"
+                type="message_switch_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig description="" formatter="HTTP_Message"
+                    name="on resource &quot;/RTCP/examples/echo/echoService/&quot; via &quot;EchoPortBindingSoap11&quot;"
+                    src="-2e83cdc4:171a20a0ea9:-7eca:-521144555:-807255066" transport="-2e83cdc4:171a20a0ea9:-7eca:1704227889:408339756">
+                    <settings MessageType="http.text.message.type"
+                        Method="POST"
+                        URL="/RTCP/examples/echo/echoService/"
+                        _version="1.1" allowSubPath="false"
+                        consumerType="Participate" filterHeaders="true"
+                        filterMethod="true" filterResourcePath="true">
+                        <filterHeadersList>
+                            <header name="SOAPAction" type="7" value="&quot;Echo&quot;"/>
+                        </filterHeadersList>
+                    </settings>
+                    <passThrough behaviour="SIMULATE_ERROR"
+                        componentId="-2e83cdc4:171a20a0ea9:-7eca:-521144555:-807255066"
+                        componentType="OPERATION" templateType="http_transport">
+                        <SIMULATE_ERROR delayPeriod="0" errorCode="503" statusText="Unavailable"/>
+                    </passThrough>
+                    <cases>
+                        <editableResource
+                            id="-2e83cdc4:171a20a0ea9:-7cf9"
+                            selfDescribing="Configure the filtering and validation for this Case action"
+                            type="message_case_action" version="1.0">
+                            <loggingConfiguration debug="false"
+                                resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                            <resourceConfig description="" name="&quot;Text&quot; using schema &quot;Text&quot;">
+                                <FilterExpressions option="NOTHING" type="script:ECMAScript"/>
+                                <bodyfilters assocdefid="Text"
+                                    name="Text" sch="Text" type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c coreTypeInt="7"
+                                    coreTypeName="String"
+                                    name="text"
+                                    nodeFormatter="doc_lit"
+                                    sch="Text" type="12" version="1.2">
+                                    <fieldExpander
+                                    fieldExpanderID="XML_EXPANDER"
+                                    fieldSchema="-2e83cdc4:171a20a0ea9:-7ec5" fieldSchemaRoot="Echo___INPUT___EchoRequest">
+                                    <property
+                                    name="XML.nullvalues" value="false"/>
+                                    <property
+                                    name="XML.normalise" value="true"/>
+                                    <property
+                                    name="XML.declaration" value="true"/>
+                                    <property
+                                    name="XML.encoding" value="UTF-8"/>
+                                    <property
+                                    name="Multi-line indented" value="Multi-line indented"/>
+                                    <property
+                                    name="XML.xmlFormat" value="Multi-line indented"/>
+                                    <property name="XML.cdata" value="false"/>
+                                    <property name="XML.space" value="false"/>
+                                    </fieldExpander>
+                                    <nodeProcessor id="doc_lit">
+                                    <extension enabled="false" id="soap.message">
+                                    <_c namespaceURI="" soapVersion="http://schemas.xmlsoap.org/soap/envelope/"/>
+                                    </extension>
+                                    <extension enabled="false" id="ws.security">
+                                    <_c MSOption="true"/>
+                                    </extension>
+                                    <extension enabled="false" id="soap.headers">
+                                    <_c
+                                    assocdefid="xml.Element"
+                                    meTy="xml.Element"
+                                    name="" sch="XML"
+                                    type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c coreTypeInt="7"
+                                    coreTypeName="String"
+                                    meTy="xml.Text"
+                                    name=""
+                                    nodeFormatter="XML"
+                                    sch="XML"
+                                    type="12" version="1.2">
+                                    <fieldExpander
+                                    fieldExpanderID="XML_EXPANDER"
+                                    fieldSchema="-2e83cdc4:171a20a0ea9:-7ec5-SoapHeaders" fieldSchemaRoot="Undefined_SOAP_Header">
+                                    <property
+                                    name="XML.nullvalues" value="false"/>
+                                    <property
+                                    name="XML.normalise" value="true"/>
+                                    <property
+                                    name="XML.declaration" value="true"/>
+                                    <property
+                                    name="XML.encoding" value="UTF-8"/>
+                                    <property
+                                    name="XML.xmlFormat" value="Multi-line indented"/>
+                                    <property
+                                    name="XML.cdata" value="false"/>
+                                    <property
+                                    name="XML.space" value="false"/>
+                                    </fieldExpander>
+                                    <contentTree>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;Undefined_SOAP_Header/&gt;<defaultActions>
+                                    <defaultMessageActions>
+                                    <fieldActionGroup>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultMessageActions>
+                                    <defaultScalarActions>
+                                    <fieldActionGroup>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="0"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultScalarActions>
+                                    </defaultActions>
+                                    <updates>
+
+                                    <updateField path="/{}/Undefined_SOAP_Header">
+                                    <_c assocdefid="Undefined_SOAP_Header"/>
+                                    </updateField>
+                                    </updates>
+                                    </contentTree>
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="7"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    </_c>
+                                    </extension>
+                                    <extension enabled="false" id="ws.addressing">
+                                    <_c
+                                    Action="&quot;Echo&quot;" To="https://ghclient01.nonprod.hclpnp.com:5443/RTCP/examples/echo/echoService/"/>
+                                    </extension>
+                                    </nodeProcessor>
+                                    <contentTree>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;Echo___INPUT___EchoRequest&gt;&#xd;
+   &lt;tns:EchoRequest xmlns:tns="http://com.greenhat.examples/echo/definitions"&gt;&#xd;
+      &lt;echoString/&gt;&#xd;
+   &lt;/tns:EchoRequest&gt;&#xd;
+&lt;/Echo___INPUT___EchoRequest&gt;<defaultActions>
+                                    <defaultMessageActions>
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false"
+                                    matching="PREFERENCE" type="101"/>
+                                    </fieldAction>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultMessageActions>
+                                    <defaultScalarActions>
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false" type="0"/>
+                                    </fieldAction>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultScalarActions>
+                                    </defaultActions>
+                                    <updates>
+                                    <updateField path="/text/Echo___INPUT___EchoRequest">
+                                    <_c assocdefid="Echo___INPUT___EchoRequest"/>
+                                    </updateField>
+                                    <setAction index="0"
+                                    path="/text/Echo___INPUT___EchoRequest/tns:EchoRequest/echoString/{}"
+                                    replaceActionType="0" replaceOuterType="1">
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false" type="0"/>
+                                    </fieldAction>
+                                    </setAction>
+                                    </updates>
+                                    </contentTree>
+                                    <fieldActionGroup>
+                                    <fieldAction enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false" type="7"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                </bodyfilters>
+                                <headerfilters
+                                    assocdefid="Http Subscribe"
+                                    meTy="Message" name=""
+                                    sch="Http Subscribe" type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c meTy="String" name="Method"
+                                    sch="Http Subscribe" type="7" version="1.2"/>
+                                    <_c meTy="String" name="URL"
+                                    sch="Http Subscribe" type="7" version="1.2"/>
+                                    <_c meTy="Message"
+                                    name="httpDetails"
+                                    sch="Http Subscribe" type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c meTy="String" name="Version"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="Message"
+                                    name="httpHeaders"
+                                    sch="Http Subscribe"
+                                    type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c meTy="String"
+                                    name="accept"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="referer"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="accept-language"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="accept-encoding"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="if-modified-since"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="if-none-match"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="user-agent"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="content-type"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="soapaction"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="host"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="connection"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="cookie"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2"/>
+                                    <_c meTy="String"
+                                    name="soapaction"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false"
+                                    exp="&quot;Echo&quot;" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    <_c meTy="String"
+                                    name="content-type"
+                                    sch="Http Subscribe"
+                                    type="7" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false"
+                                    exp="text/xml" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    </_c>
+                                    <_c meTy="Boolean"
+                                    name="followRedirects"
+                                    optional="true"
+                                    sch="Http Subscribe"
+                                    type="8" version="1.2"/>
+                                    </_c>
+                                    <_c meTy="String" name="MessageType"
+                                    sch="Http Subscribe" type="7" version="1.2"/>
+                                    <_c meTy="Date-Time"
+                                    name="rcvdTimestamp"
+                                    sch="Http Subscribe" type="11" version="1.2"/>
+                                </headerfilters>
+                                <childActions>
+                                    <editableResource
+                                    id="20060772:17f74559246:-7a68"
+                                    selfDescribing="Use a value from the current run to extract information from a test data set."
+                                    type="test_data_lookup_action" version="1.0">
+                                    <loggingConfiguration
+                                    debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                    <resourceConfig description="" name="Search &quot;Sayings&quot; for &quot;%%lookupKey%%&quot; in &quot;key&quot;">
+                                    <true
+                                    id="20060772:17f74559246:-7a67"
+                                    selfDescribing="Found"
+                                    type="test_data_lookup_path_action" version="1.0">
+                                    <loggingConfiguration
+                                    debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                    <resourceConfig
+                                    description=""
+                                    name="" path="0">
+                                    <editableResource
+                                    id="20060772:17f74559246:-7a12"
+                                    selfDescribing="Execute a function and optionally tag the results. Use predefined functions, custom plug-ins and tagged data."
+                                    type="function_action" version="1.0">
+
+                                    <loggingConfiguration
+                                    debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                    <resourceConfig
+                                    description=""
+                                    eval_type="Mozilla Rhino"
+                                    function="full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot; MSG: &quot; + tags[&quot;message&quot;]" name="Run &quot;full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot; MSG: &quot; + tags[&quot;message&quot;]&quot;"/>
+                                    </editableResource>
+                                    </resourceConfig>
+                                    </true>
+                                    <false
+                                    id="20060772:17f74559246:-7a66"
+                                    selfDescribing="Not Found"
+                                    type="test_data_lookup_path_action" version="1.0">
+                                    <loggingConfiguration
+                                    debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                    <resourceConfig
+                                    description=""
+                                    name="" path="1">
+                                    <editableResource
+                                    id="20060772:17f74559246:-79cc"
+                                    selfDescribing="Execute a function and optionally tag the results. Use predefined functions, custom plug-ins and tagged data."
+                                    type="function_action" version="1.0">
+
+                                    <loggingConfiguration
+                                    debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                    <resourceConfig
+                                    description=""
+                                    eval_type="Mozilla Rhino"
+                                    function="full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot;QUOTE: OOPS no quote in table &quot; " name="Run &quot;full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot;QUOTE: OOPS no quote in table &quot; &quot;"/>
+                                    </editableResource>
+                                    </resourceConfig>
+                                    </false>
+                                    <props allMatches="false">
+                                    <tdsref
+                                    id="-7888ec70:171ac021bcd:-7e3e"
+                                    lkname="Sayings"
+                                    lkpath="echo/Sayings" type="simple_test_data"/>
+                                    <lookups column="key" lookupValue="%%lookupKey%%"/>
+                                    </props>
+                                    <mapper
+                                    disableFiltersWhenEmpty="false"
+                                    knownColumns="message,key" noAutoMap="">
+                                    <mapping
+                                    columnName="message"
+                                    tagName="message" type="4"/>
+                                    </mapper>
+                                    </resourceConfig>
+                                    </editableResource>
+                                    <editableResource
+                                    id="-2e83cdc4:171a20a0ea9:-7cf8"
+                                    selfDescribing="Respond to a previously received request message.  Select the relevant request from the drop-down and edit the content of the message to send."
+                                    type="send_reply_action" version="1.0">
+                                    <loggingConfiguration
+                                    debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                    <resourceConfig description=""
+                                    formatter="HTTP_Message"
+                                    name="&quot;Text&quot; using schema &quot;Text&quot; (2)"
+                                    receiverequestid="-2e83cdc4:171a20a0ea9:-7cff" src="-2e83cdc4:171a20a0ea9:-7cff">
+                                    <replyHeaderMessage
+                                    type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c name="MessageType"
+                                    type="7"
+                                    value="http.text.message.type" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction type="0">
+                                    <fieldAction
+                                    exp="http.text.message.type" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    <_c name="httpDetails"
+                                    type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c
+                                    name="httpHeaders"
+                                    type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c
+                                    name="Content-Type"
+                                    type="7"
+                                    value="text/xml" version="1.2">
+                                    <fieldActionGroup>
+
+                                    <fieldAction type="0">
+
+                                    <fieldAction
+                                    exp="text/xml" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    </_c>
+                                    <_c meTy="String"
+                                    name="Version"
+                                    type="7"
+                                    value="1.0" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction type="0">
+
+                                    <fieldAction
+                                    exp="1.0" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    </_c>
+                                    <_c meTy="String"
+                                    name="StatusCode"
+                                    type="7" value="200" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction type="0">
+                                    <fieldAction
+                                    exp="200" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    <_c meTy="String"
+                                    name="ReasonPhrase"
+                                    type="7"
+                                    value="STUBBED" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction type="0">
+                                    <fieldAction
+                                    exp="STUBBED" type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    </replyHeaderMessage>
+                                    <replyMessage
+                                    assocdefid="Text"
+                                    name="Text" sch="Text"
+                                    type="12" version="1.2">
+                                    <fieldActionGroup>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c coreTypeInt="7"
+                                    coreTypeName="String"
+                                    name="text"
+                                    nodeFormatter="doc_lit"
+                                    sch="Text" type="12" version="1.2">
+                                    <fieldExpander
+                                    fieldExpanderID="XML_EXPANDER"
+                                    fieldSchema="-2e83cdc4:171a20a0ea9:-7ec5" fieldSchemaRoot="Echo___OUTPUT___EchoResponse">
+                                    <property
+                                    name="XML.nullvalues" value="false"/>
+                                    <property
+                                    name="XML.normalise" value="true"/>
+                                    <property
+                                    name="XML.declaration" value="true"/>
+                                    <property
+                                    name="XML.encoding" value="UTF-8"/>
+                                    <property
+                                    name="Multi-line indented" value="Multi-line indented"/>
+                                    <property
+                                    name="XML.xmlFormat" value="Multi-line indented"/>
+                                    <property
+                                    name="XML.cdata" value="false"/>
+                                    <property
+                                    name="XML.space" value="false"/>
+                                    </fieldExpander>
+                                    <nodeProcessor id="doc_lit">
+                                    <extension
+                                    enabled="false" id="soap.message">
+                                    <_c
+                                    namespaceURI="" soapVersion="http://schemas.xmlsoap.org/soap/envelope/"/>
+                                    </extension>
+                                    <extension
+                                    enabled="false" id="ws.security">
+                                    <_c MSOption="true"/>
+                                    </extension>
+                                    <extension
+                                    enabled="false" id="soap.headers">
+                                    <_c
+                                    assocdefid="xml.Element"
+                                    meTy="xml.Element"
+                                    name=""
+                                    sch="XML"
+                                    type="12" version="1.2">
+                                    <fieldActionGroup>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="0"/>
+                                    </fieldAction>
+
+                                    <fieldAction type="0">
+
+                                    <fieldAction type="0"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    <_c
+                                    coreTypeInt="7"
+                                    coreTypeName="String"
+                                    meTy="xml.Text"
+                                    name=""
+                                    nodeFormatter="XML"
+                                    sch="XML"
+                                    type="12" version="1.2">
+
+                                    <fieldExpander
+                                    fieldExpanderID="XML_EXPANDER"
+                                    fieldSchema="-2e83cdc4:171a20a0ea9:-7ec5-SoapHeaders" fieldSchemaRoot="Undefined_SOAP_Header">
+
+                                    <property
+                                    name="XML.nullvalues" value="false"/>
+
+                                    <property
+                                    name="XML.normalise" value="true"/>
+
+                                    <property
+                                    name="XML.declaration" value="true"/>
+
+                                    <property
+                                    name="XML.encoding" value="UTF-8"/>
+
+                                    <property
+                                    name="XML.xmlFormat" value="Multi-line indented"/>
+
+                                    <property
+                                    name="XML.cdata" value="false"/>
+
+                                    <property
+                                    name="XML.space" value="false"/>
+                                    </fieldExpander>
+                                    <contentTree>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;Undefined_SOAP_Header/&gt;<defaultActions>
+                                    <defaultMessageActions>
+                                    <fieldActionGroup>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false" type="100"/>
+                                    </fieldAction>
+
+                                    <fieldAction type="0">
+
+                                    <fieldAction type="100"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultMessageActions>
+                                    <defaultScalarActions>
+                                    <fieldActionGroup>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="0"/>
+                                    </fieldAction>
+
+                                    <fieldAction type="0">
+
+                                    <fieldAction type="0"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultScalarActions>
+                                    </defaultActions>
+                                    <updates>
+
+                                    <updateField path="/{}/Undefined_SOAP_Header">
+
+                                    <_c assocdefid="Undefined_SOAP_Header"/>
+                                    </updateField>
+                                    </updates>
+                                    </contentTree>
+                                    <fieldActionGroup>
+
+                                    <fieldAction type="0">
+
+                                    <fieldAction type="4"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="7"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    </_c>
+                                    </extension>
+                                    <extension
+                                    enabled="false" id="ws.addressing">
+                                    <_c To="https://ghclient01.nonprod.hclpnp.com:5443/RTCP/examples/echo/echoService/"/>
+                                    </extension>
+                                    </nodeProcessor>
+                                    <contentTree>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;Echo___OUTPUT___EchoResponse&gt;&#xd;
+   &lt;tns:EchoResponse xmlns:tns="http://com.greenhat.examples/echo/definitions"&gt;&#xd;
+      &lt;echoStringReturn&gt;%%full_reply%%&lt;/echoStringReturn&gt;&#xd;
+   &lt;/tns:EchoResponse&gt;&#xd;
+&lt;/Echo___OUTPUT___EchoResponse&gt;<defaultActions>
+                                    <defaultMessageActions>
+                                    <fieldActionGroup>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    anyOrder="false"
+                                    enabled="false"
+                                    ignoreExtra="false"
+                                    ignoreNonPresent="false"
+                                    matching="PREFERENCE" type="101"/>
+                                    </fieldAction>
+
+                                    <fieldAction type="0">
+
+                                    <fieldAction type="100"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultMessageActions>
+                                    <defaultScalarActions>
+                                    <fieldActionGroup>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="0"/>
+                                    </fieldAction>
+
+                                    <fieldAction type="0">
+
+                                    <fieldAction type="0"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false" type="5"/>
+                                    </fieldAction>
+
+                                    <fieldAction
+                                    enabled="false" type="1">
+
+                                    <fieldAction
+                                    enabled="false"
+                                    type="6"
+                                    typeActionAllType="true" typeActionMetaType="false"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </defaultScalarActions>
+                                    </defaultActions>
+                                    <updates>
+                                    <updateField path="/text/Echo___OUTPUT___EchoResponse">
+                                    <_c assocdefid="Echo___OUTPUT___EchoResponse"/>
+                                    </updateField>
+                                    </updates>
+                                    </contentTree>
+                                    <fieldActionGroup>
+                                    <fieldAction type="0">
+                                    <fieldAction type="4"/>
+                                    </fieldAction>
+                                    <fieldAction
+                                    enabled="false" type="1">
+                                    <fieldAction
+                                    enabled="false" type="7"/>
+                                    </fieldAction>
+                                    </fieldActionGroup>
+                                    </_c>
+                                    </replyMessage>
+                                    </resourceConfig>
+                                    </editableResource>
+                                </childActions>
+                            </resourceConfig>
+                        </editableResource>
+                        <editableResource
+                            id="-2e83cdc4:171a20a0ea9:-7cfe"
+                            type="default_case_action" version="1.0">
+                            <loggingConfiguration debug="false"
+                                resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                            <resourceConfig description="" name=" (2)"/>
+                        </editableResource>
+                    </cases>
+                </resourceConfig>
+            </editableResource>
+        </testTree>
+        <tagDataStore identifier="5fd2a02f:17f746349e0:-734a"
+            inputMode="NONE" outputMode="NONE">
+            <tag defaultValue="default is useless"
+                description="building up the reply" name="full_reply"/>
+            <tag defaultValue="" description="" name="message"/>
+        </tagDataStore>
+        <testprops messageClearance="false"/>
+        <stubprops behaviourStyle="ONE_TO_ONE"
+            includeContractValidationOption="false" majorVersion="1"
+            messageClearance="false" minorVersion="0" optimise="false"
+            sendErrorResponseOption="false" wrks="10">
+            <responseTimeTable>
+                <entry key="-2e83cdc4:171a20a0ea9:-7eca:-521144555:-807255066">
+                    <value type="NO_DELAY"/>
+                </entry>
+            </responseTimeTable>
+            <environmentTasks preventExecutionOnFailure="false">
+                <task id="5fd2a02f:17f746349e0:-7695"
+                    lkname="CheckStartupOptions"
+                    lkpath="CheckStartupOptions" type="env_task_resource"/>
+            </environmentTasks>
+        </stubprops>
+        <Session mode="NONE"/>
+    </resourceConfig>
+</editableResource>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1646926206826"
+    createdUser="Katherine.Carroll" id="5fd2a02f:17f746349e0:-7695"
+    type="env_task_resource" updatedTimestamp="1646928127876"
+    updatedUser="Katherine.Carroll" version="1.0">
+    <loggingConfiguration debug="false" resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+    <resourceConfig description="" name="">
+        <taskTree>
+            <editableResource id="5fd2a02f:17f746349e0:-755f"
+                selfDescribing="Use a value from the current run to extract information from a test data set."
+                type="test_data_lookup_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig description="" name="Search &quot;Sayings&quot; for &quot;%%lookupKey%%&quot; in &quot;key&quot;">
+                    <true id="5fd2a02f:17f746349e0:-755e"
+                        selfDescribing="Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false"
+                            resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="0">
+                            <editableResource
+                                id="5fd2a02f:17f746349e0:-755d"
+                                selfDescribing="Execute a function and optionally tag the results. Use predefined functions, custom plug-ins and tagged data."
+                                type="function_action" version="1.0">
+                                <loggingConfiguration debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                <resourceConfig description=""
+                                    eval_type="Mozilla Rhino"
+                                    function="full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot; MSG: &quot; + tags[&quot;message&quot;]" name="Run &quot;full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot; MSG: &quot; + tags[&quot;message&quot;]&quot;"/>
+                            </editableResource>
+                        </resourceConfig>
+                    </true>
+                    <false id="5fd2a02f:17f746349e0:-755c"
+                        selfDescribing="Not Found"
+                        type="test_data_lookup_path_action" version="1.0">
+                        <loggingConfiguration debug="false"
+                            resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                        <resourceConfig description="" name="" path="1">
+                            <editableResource
+                                id="5fd2a02f:17f746349e0:-755b"
+                                selfDescribing="Execute a function and optionally tag the results. Use predefined functions, custom plug-ins and tagged data."
+                                type="function_action" version="1.0">
+                                <loggingConfiguration debug="false"
+                                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                                <resourceConfig description=""
+                                    eval_type="Mozilla Rhino"
+                                    function="full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot;QUOTE: OOPS no quote in table &quot; " name="Run &quot;full_reply = &quot;ENV: &quot; + tags[&quot;ENVIRONMENT/NAME&quot;] + &quot; VAR: &quot; + tags[&quot;echo_message&quot;] + &quot; SECRET: &quot; + tags[&quot;petname&quot;] + &quot;QUOTE: OOPS no quote in table &quot; &quot;"/>
+                            </editableResource>
+                        </resourceConfig>
+                    </false>
+                    <props allMatches="false">
+                        <tdsref id="-7888ec70:171ac021bcd:-7e3e"
+                            lkname="Sayings" lkpath="echo/Sayings" type="simple_test_data"/>
+                        <lookups column="key" lookupValue="%%lookupKey%%"/>
+                    </props>
+                    <mapper disableFiltersWhenEmpty="false"
+                        knownColumns="message,key" noAutoMap="message">
+                        <mapping columnName="message" tagName="message" type="4"/>
+                    </mapper>
+                </resourceConfig>
+            </editableResource>
+            <editableResource id="5fd2a02f:17f746349e0:-740c"
+                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                type="logging_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig append="true" description=""
+                    flush="true" loggingMessage="%%full_reply%%"
+                    name="%%full_reply%%" outputFile="" role="0"/>
+            </editableResource>
+            <editableResource id="5fd2a02f:17f746349e0:-7018"
+                selfDescribing="Choose evaluation expressions to determine test execution flow. Use predefined functions, custom plug-ins and tagged data. If the functions pass then the test will continue to execute; otherwise the test will fail."
+                type="assert_true_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig description=""
+                    name="eq(tags[&quot;lookupKey&quot;],&quot;kind&quot;)&#xd;&#xa;"
+                    option="OTHER"
+                    script="eq(tags[&quot;lookupKey&quot;],&quot;kind&quot;)" type="script:ECMAScript"/>
+            </editableResource>
+            <editableResource id="5fd2a02f:17f746349e0:-72a8"
+                selfDescribing="Choose evaluation expressions to determine test execution flow. Use predefined functions, custom plug-ins and tagged data. If the functions pass then the test will continue to execute; otherwise the test will fail."
+                type="assert_true_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig description=""
+                    name="eq(tags[&quot;ENVIRONMENT/NAME&quot;],&quot;Direct&quot;)&#xd;&#xa;"
+                    option="OTHER"
+                    script="eq(tags[&quot;ENVIRONMENT/NAME&quot;],&quot;Direct&quot;)" type="script:ECMAScript"/>
+            </editableResource>
+            <editableResource id="5fd2a02f:17f746349e0:-726b"
+                selfDescribing="Choose evaluation expressions to determine test execution flow. Use predefined functions, custom plug-ins and tagged data. If the functions pass then the test will continue to execute; otherwise the test will fail."
+                type="assert_true_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig description=""
+                    name="eq(tags[&quot;petname&quot;],&quot;harper&quot;)&#xd;&#xa;"
+                    option="OTHER"
+                    script="eq(tags[&quot;petname&quot;],&quot;harper&quot;)" type="script:ECMAScript"/>
+            </editableResource>
+        </taskTree>
+        <tagDataStore inputMode="NONE" outputMode="NONE">
+            <tag defaultValue="empty" description="" name="full_reply"/>
+            <tag defaultValue="silence" description="" name="message"/>
+        </tagDataStore>
+    </resourceConfig>
+</editableResource>

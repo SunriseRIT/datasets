@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1646930199674"
+    createdUser="Katherine.Carroll" id="51a49550:17f74ab66dd:-7def"
+    type="environment_resource" updatedTimestamp="1646930199674"
+    updatedUser="Katherine.Carroll" version="1.0">
+    <loggingConfiguration debug="false" resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+    <resourceConfig isOverridingSecretsNamespace="false" overridingSecretsNamespace="">
+        <environmentVariable evdescription="" key="echo_message" value="alternative"/>
+        <environmentVariable evdescription="" key="lookupKey" value="home"/>
+        <evbindings>
+            <evbinding
+                evLogicalItemId="-2e83cdc4:171a20a0ea9:-7eca:1704227889:408339756" evPhysicalItemId="-7888ec70:171ac021bcd:-7e72"/>
+        </evbindings>
+    </resourceConfig>
+</editableResource>
