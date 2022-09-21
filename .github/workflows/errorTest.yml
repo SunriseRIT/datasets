@@ -10,7 +10,7 @@ jobs:
          - name: Execute Test
            uses: anuraag-k/ServerAction@main
            with:
-            serverUrl: https://fiction-hcl.tp-k8s.nonprod.hclpnp.com/
+            serverUrl: https://master-hcl.tp-k8s.nonprod.hclpnp.com/
             offlineToken: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2MmYxZjBjZC05N2QzLTQyM2UtOGUxMy0zYjY0MTI5M2MwZmEifQ.eyJpYXQiOjE2NjMxODI2MDUsImp0aSI6IjI2NDczOWFlLWU5MzEtNGFhYy1iNTI2LTRiMjQwMmRlMzc3MSIsImlzcyI6Imh0dHBzOi8vbWFzdGVyLWhjbC50cC1rOHMubm9ucHJvZC5oY2xwbnAuY29tL2F1dGgvcmVhbG1zL3Rlc3RzZXJ2ZXIiLCJhdWQiOiJodHRwczovL21hc3Rlci1oY2wudHAtazhzLm5vbnByb2QuaGNscG5wLmNvbS9hdXRoL3JlYWxtcy90ZXN0c2VydmVyIiwic3ViIjoiOGZiYjQxMGItYTkwYy00MzI3LTk1OTAtNzQ4MGViMDIwM2MxIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6InRlc3RzZXJ2ZXIiLCJzZXNzaW9uX3N0YXRlIjoiMDJiNzc2YWQtN2RjOS00MTc1LTg1MzctN2YyMTVlNGY0M2Q3Iiwic2NvcGUiOiJ0ZXN0c2VydmVyIGVtYWlsIG9mZmxpbmVfYWNjZXNzIHByb2ZpbGUiLCJzaWQiOiIwMmI3NzZhZC03ZGM5LTQxNzUtODUzNy03ZjIxNWU0ZjQzZDcifQ.nL7U7aCXJH-nFnir2ennK_vi8DyjnzzndkjOduz4VY4
             teamspace: Initial Team Space
             project: Kathy_API_Project
